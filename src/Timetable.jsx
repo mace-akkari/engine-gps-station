@@ -4,7 +4,7 @@ const minutes = (time) => Math.floor(time / 60);
 
 const Timetable = ({ trains }) => {
   return (
-    <table>
+    <table className="time_screen">
       <tbody>
         {trains.map(
           (

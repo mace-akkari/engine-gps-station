@@ -4,8 +4,8 @@ import "./App.css";
 const App = () => {
   return (
     <section>
-      <div>Great Portland Street Station</div>
-      <div>
+      <h1 className="heading">Great Portland Street Station</h1>
+      <div className="moniters">
         <PlatformTimer />
       </div>
     </section>

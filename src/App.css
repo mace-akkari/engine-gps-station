@@ -1,1 +1,32 @@
+html,
+body {
+  min-height: 100%;
+  background: url("gps.webp") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
 
+.heading {
+  color: white;
+  font-size: 75px;
+  text-align: center;
+}
+
+.moniters {
+  display: flex;
+  justify-content: space-around;
+}
+
+.screen_header {
+  text-align: center;
+  color: white;
+}
+.time_screen {
+  border: 16px solid #333;
+  color: yellow;
+  background-color: #111;
+}
+
+td {
+  padding: 0px 13px 10px;
+}

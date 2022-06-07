@@ -38,7 +38,7 @@ const PlatformTimer = () => {
       setInterval(async () => {
         //then the setinterval
         setDue(await dueNext());
-      }, 20000);
+      }, 30000);
     })();
   }, []);
   if (loading) return <h2>Loading Data......</h2>;
@@ -47,11 +47,14 @@ const PlatformTimer = () => {
   return (
     <>
       <div>
-        <h2>Westbound </h2>
-        <Timetable trains={due.filter(platform1).sort(sortAsc)} />
+        <h2 className="screen_header">Westbound </h2>
+        <Timetable
+          className="time_screen"
+          trains={due.filter(platform1).sort(sortAsc)}
+        />
       </div>
       <div>
-        <h2>Eastbound</h2>
+        <h2 className="screen_header">Eastbound</h2>
         <Timetable trains={due.filter(platform2).sort(sortAsc)} />
       </div>
     </>
