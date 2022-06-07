@@ -1,7 +1,15 @@
+import PlatformTimer from "./PlatformTimer";
 import "./App.css";
 
 const App = () => {
-  return <div>hello</div>;
+  return (
+    <section>
+      <div>Great Portland Street Station</div>
+      <div>
+        <PlatformTimer />
+      </div>
+    </section>
+  );
 };
 
 export default App;
