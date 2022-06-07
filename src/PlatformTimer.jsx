@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Timetable from "./Timetable";
+import Clock from "./clock";
 
 const GPS = "940GZZLUGPS";
 const URL = `https://api.tfl.gov.uk/StopPoint/${GPS}/Arrivals?modeFilter=tube`;
@@ -41,6 +42,7 @@ const PlatformTimer = () => {
       }, 30000);
     })();
   }, []);
+
   if (loading) return <h2>Loading Data......</h2>;
   if (!due) return <h2>No data available</h2>;
 
@@ -53,6 +55,7 @@ const PlatformTimer = () => {
           trains={due.filter(platform1).sort(sortAsc)}
         />
       </div>
+      <Clock />
       <div>
         <h2 className="screen_header">Eastbound</h2>
         <Timetable trains={due.filter(platform2).sort(sortAsc)} />
