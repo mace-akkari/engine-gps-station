@@ -38,6 +38,7 @@ body {
   border: 9px solid orange;
   background-color: white;
   padding: 9px;
+  padding-right: 13px;
   width: 90px;
   height: fit-content;
   font-size: 20px;
