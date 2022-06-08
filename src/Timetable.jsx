@@ -1,5 +1,5 @@
 const arriving = (time) => (time < 1 ? "Due" : minOrMins(time));
-const minOrMins = (time) => (time === 1 ? `${time} min` : `${time} min(s)`);
+const minOrMins = (time) => (time === 1 ? `${time} min` : `${time} mins`);
 const minutes = (time) => Math.floor(time / 60);
 
 const Timetable = ({ trains }) => {

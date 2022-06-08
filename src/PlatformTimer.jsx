@@ -7,9 +7,7 @@ const URL = `https://api.tfl.gov.uk/StopPoint/${GPS}/Arrivals?modeFilter=tube`;
 
 const dueNext = async () => {
   try {
-    // Fetching train data asynchronously
     const response = await fetch(URL);
-    // Waiting for the response
     const data = await response.json();
 
     return data;
@@ -31,13 +29,10 @@ const PlatformTimer = () => {
   const platform2 = (due) => due.platformName === "Eastbound - Platform 2";
 
   useEffect(() => {
-    // An async IIFE to start the request on component init.
-
     (async () => {
-      setDue(await dueNext()); // init call
+      setDue(await dueNext());
       setLoading(false);
       setInterval(async () => {
-        //then the setinterval
         setDue(await dueNext());
       }, 30000);
     })();

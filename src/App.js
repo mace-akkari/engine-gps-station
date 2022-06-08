@@ -3,12 +3,17 @@ import "./App.css";
 
 const App = () => {
   return (
-    <section>
-      <h1 className="heading">Great Portland Street Station</h1>
+    <div>
+      <section>
+        <div className="banner1"></div>
+        <div className="banner2"></div>
+        <div className="banner3"></div>
+      </section>
+      <div className="heading">GREAT PORTLAND STREET</div>
       <div className="moniters">
         <PlatformTimer />
       </div>
-    </section>
+    </div>
   );
 };
 
