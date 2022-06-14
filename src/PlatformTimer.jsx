@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Timetable from "./Timetable";
 import Clock from "./clock";
 
-const GPS = "940GZZLUGPS";
+const GPS = "940GZZLUOXC";
 const URL = `https://api.tfl.gov.uk/StopPoint/${GPS}/Arrivals?modeFilter=tube`;
 
 const dueNext = async () => {
@@ -22,7 +22,6 @@ const dueNext = async () => {
 const PlatformTimer = () => {
   const [due, setDue] = useState();
   const [loading, setLoading] = useState(true);
-  console.log("due: ", due);
 
   const sortAsc = (a, b) => a.timeToStation - b.timeToStation;
   const platform1 = (due) => due.platformName === "Westbound - Platform 1";
@@ -31,6 +30,8 @@ const PlatformTimer = () => {
   useEffect(() => {
     (async () => {
       setDue(await dueNext());
+      console.log("due: ", due);
+      console.log("station:", due.towards);
       setLoading(false);
       setInterval(async () => {
         setDue(await dueNext());
@@ -41,6 +42,8 @@ const PlatformTimer = () => {
   if (loading) return <h2>Loading Data......</h2>;
   if (!due) return <h2>No data available</h2>;
 
+  // const names = new Set();
+  // due.forEach((x) => names.add(x.platformName));
   return (
     <>
       <div>

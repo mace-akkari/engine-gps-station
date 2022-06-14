@@ -6,18 +6,12 @@ const Timetable = ({ trains }) => {
   return (
     <table className="time_screen">
       <tbody>
-        {trains.map(
-          (
-            next,
-            index // using index as key as api returns duplicates
-          ) => (
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td>{next.towards} </td>
-              <td>{arriving(minutes(next.timeToStation))}</td>
-            </tr>
-          )
-        )}
+        {trains.map((next, index) => (
+          <tr key={index}>
+            <td>{next.towards} </td>
+            <td>{arriving(minutes(next.timeToStation))}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
