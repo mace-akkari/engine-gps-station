@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import Timetable from "./Timetable";
 import Clock from "./clock";
 
-const GPS = "940GZZLUOXC";
+const GPS = "940GZZLUGPS";
 const URL = `https://api.tfl.gov.uk/StopPoint/${GPS}/Arrivals?modeFilter=tube`;
 
+// oxford circus = 940GZZLUOXC
 const dueNext = async () => {
   try {
     const response = await fetch(URL);
@@ -24,14 +25,13 @@ const PlatformTimer = () => {
   const [loading, setLoading] = useState(true);
 
   const sortAsc = (a, b) => a.timeToStation - b.timeToStation;
-  const platform1 = (due) => due.platformName === "Westbound - Platform 1";
-  const platform2 = (due) => due.platformName === "Eastbound - Platform 2";
+
+  // learn how this works!! using clousre -
+  const platformFilter = (name) => (due) => due.platformName === name;
 
   useEffect(() => {
     (async () => {
       setDue(await dueNext());
-      console.log("due: ", due);
-      console.log("station:", due.towards);
       setLoading(false);
       setInterval(async () => {
         setDue(await dueNext());
@@ -42,22 +42,29 @@ const PlatformTimer = () => {
   if (loading) return <h2>Loading Data......</h2>;
   if (!due) return <h2>No data available</h2>;
 
-  // const names = new Set();
-  // due.forEach((x) => names.add(x.platformName));
-  return (
-    <>
+  // learn set
+  const names = new Set();
+  due.forEach((x) => names.add(x.platformName));
+
+  const timetables = [...names].map((platformName) => {
+    return (
       <div>
-        <h2 className="screen_header">Westbound </h2>
         <Timetable
           className="time_screen"
-          trains={due.filter(platform1).sort(sortAsc)}
+          trains={due.filter(platformFilter(platformName)).sort(sortAsc)}
+          platformName={platformName}
         />
       </div>
+    );
+  });
+
+  // order platforms - find a way,
+
+  console.log("names:", names);
+  return (
+    <>
       <Clock />
-      <div>
-        <h2 className="screen_header">Eastbound</h2>
-        <Timetable trains={due.filter(platform2).sort(sortAsc)} />
-      </div>
+      {timetables}
     </>
   );
 };
