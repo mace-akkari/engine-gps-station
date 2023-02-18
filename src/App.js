@@ -1,7 +1,17 @@
 import PlatformTimer from "./PlatformTimer";
 import "./App.css";
 
+import SearchBox from "./SearchBox";
+import { useState } from "react";
+
+import JSONDATA from "./stations.json";
+
+// throhtelling -- debouncing --> events
+
 const App = () => {
+  const [stationSearch, setStationSearch] = useState("");
+
+  console.log(stationSearch);
   return (
     <div>
       <section>
@@ -10,8 +20,14 @@ const App = () => {
         <div className="banner3"></div>
       </section>
       <div className="heading">GREAT PORTLAND STREET</div>
+      <SearchBox
+        onSearch={(search) => {
+          console.log("search is ", search);
+          setStationSearch(search);
+        }}
+      />
       <div className="moniters">
-        <PlatformTimer />
+        <PlatformTimer stationSearch={stationSearch} />
       </div>
     </div>
   );
