@@ -29,6 +29,7 @@ const dueNext = async ({ tubeName }) => {
 const PlatformTimer = ({ stationSearch }) => {
   const [due, setDue] = useState();
   const [loading, setLoading] = useState(true);
+  const [intervalPointer, setIntervalPointer] = useState(null);
 
   // const GPS = "940GZZLUOXC";
   console.log("stationSearch", stationSearch, stations);
@@ -42,18 +43,17 @@ const PlatformTimer = ({ stationSearch }) => {
     let filteredGPS = stations.filter((element, idx) => {
       return element.station.toLowerCase() === stationSearch.toLowerCase();
     });
-
-    console.log("filtered ", filteredGPS); //type array
-
-    //[{}]
-
     if (filteredGPS?.length > 0) {
       (async () => {
         setDue(await dueNext({ tubeName: filteredGPS[0].naptanId }));
         setLoading(false);
-        setInterval(async () => {
+        intervalPointer && clearInterval(intervalPointer);
+        // learn setInterval
+        const ip = setInterval(async () => {
           setDue(await dueNext({ tubeName: filteredGPS[0].naptanId }));
         }, 30000);
+
+        setIntervalPointer(ip);
       })();
     }
   }, [stationSearch]);
@@ -81,9 +81,6 @@ const PlatformTimer = ({ stationSearch }) => {
     );
   });
 
-  // order platforms - find a way,
-
-  //console.log("names:", due);
   return (
     <>
       <Clock />
