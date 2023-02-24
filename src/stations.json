@@ -10,5 +10,101 @@
   {
     "station": "Oxford",
     "naptanId": "940GZZLUOXC"
+  },
+  {
+    "station": "Acton Town",
+    "naptanId": "940GZZLUACT"
+  },
+  {
+    "station": "Aldgate East",
+    "naptanId": "940GZZLUADE"
+  },
+  {
+    "station": "Aldgate",
+    "naptanId": "940GZZLUALD"
+  },
+  {
+    "station": "Alperton",
+    "naptanId": "940GZZLUALP"
+  },
+  {
+    "station": "Amersham",
+    "naptanId": "940GZZLUAMS"
+  },
+  {
+    "station": "Angel",
+    "naptanId": "940GZZLUAGL"
+  },
+  {
+    "station": "Arnos Grove",
+    "naptanId": "940GZZLUASG"
+  },
+  {
+    "station": "Arsenal",
+    "naptanId": "940GZZLUASL"
+  },
+  {
+    "station": "Baker Street",
+    "naptanId": "940GZZLUBST"
+  },
+  {
+    "station": "Balham",
+    "naptanId": "940GZZLUBLM"
+  },
+  {
+    "station": "Bank",
+    "naptanId": "940GZZLUBNK"
+  },
+  {
+    "station": "Barbican",
+    "naptanId": "940GZZLUBBN"
+  },
+  {
+    "station": "Barking",
+    "naptanId": "940GZZLUBKG"
+  },
+  {
+    "station": "Barkingside",
+    "naptanId": "940GZZLUBKE"
+  },
+  {
+    "station": "f",
+    "naptanId": "f"
+  },
+  {
+    "station": "f",
+    "naptanId": "f"
+  },
+  {
+    "station": "",
+    "naptanId": ""
+  },
+  {
+    "station": "f",
+    "naptanId": "f"
+  },
+  {
+    "station": "f",
+    "naptanId": "f"
+  },
+  {
+    "station": "f",
+    "naptanId": "f"
+  },
+  {
+    "station": "",
+    "naptanId": ""
+  },
+  {
+    "station": "f",
+    "naptanId": "f"
+  },
+  {
+    "station": "f",
+    "naptanId": "f"
+  },
+  {
+    "station": "f",
+    "naptanId": "f"
   }
 ]
