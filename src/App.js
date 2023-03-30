@@ -1,8 +1,10 @@
-import PlatformTimer from "./PlatformTimer";
-import "./App.css";
-
-import SearchBox from "./SearchBox";
 import { useState } from "react";
+
+import PlatformTimer from "./PlatformTimer";
+import SearchBox from "./SearchBox";
+import Header from "./Header";
+
+import "./App.css";
 
 // throhtelling -- debouncing --> events
 
@@ -12,12 +14,7 @@ const App = () => {
   console.log(stationSearch);
   return (
     <div>
-      <section>
-        <div className="banner1"></div>
-        <div className="banner2"></div>
-        <div className="banner3"></div>
-      </section>
-      <div className="heading">GREAT PORTLAND STREET</div>
+      <Header />
       <SearchBox
         onSearch={(search) => {
           console.log("search is ", search);
