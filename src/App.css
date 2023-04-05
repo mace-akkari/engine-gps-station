@@ -16,14 +16,14 @@ body {
 
 .header_logo img{
   background-color: white;
-  height: 113px;
+  height: 100%;
 }
 
 .header_title {
   display: flex;
   align-items: center;
   color: white;
-  font-size: 60px;
+  font-size: 100px;
   font-weight: 500;
   padding: 0px 13px;
   background-color: blue;
