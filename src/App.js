@@ -17,7 +17,7 @@ const App = () => {
       <Header />
       <SearchBox
         onSearch={(search) => {
-          console.log("search is ", search);
+          //console.log("search is ", search);
           setStationSearch(search);
         }}
       />
