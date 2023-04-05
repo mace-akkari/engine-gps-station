@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Timetable from "./Timetable";
-import Clock from "./clock";
 import stations from "./stations.json";
 
 // -- both the search and id, put both into lower case. deal when you can't find a station.
@@ -81,12 +80,7 @@ const PlatformTimer = ({ stationSearch }) => {
     );
   });
 
-  return (
-    <>
-      <Clock />
-      {timetables}
-    </>
-  );
+  return <>{timetables}</>;
 };
 
 export default PlatformTimer;

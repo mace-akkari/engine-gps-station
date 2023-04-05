@@ -3,6 +3,7 @@ import { useState } from "react";
 import PlatformTimer from "./PlatformTimer";
 import SearchBox from "./SearchBox";
 import Header from "./Header";
+import Clock from "./clock";
 
 import "./App.css";
 
@@ -21,6 +22,7 @@ const App = () => {
           setStationSearch(search);
         }}
       />
+      <Clock />
       <div className="moniters">
         <PlatformTimer stationSearch={stationSearch} />
       </div>
