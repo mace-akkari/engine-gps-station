@@ -65,7 +65,6 @@ const PlatformTimer = ({ stationSearch }) => {
   // learn set
   const names = new Set();
   due?.length > 0 && due.forEach((x) => names.add(x.platformName));
-
   console.log("names ", names);
 
   const timetables = [...names].map((platformName) => {

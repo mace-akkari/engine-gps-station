@@ -4,7 +4,10 @@ const minutes = (time) => Math.floor(time / 60);
 
 const Timetable = ({ trains, platformName }) => {
   return (
-    <>
+    <div div className="screen_container">
+      <h2 className={`screen_header line-${trains[0].lineId}`}>
+        {`${trains[0].lineName} Line`}
+      </h2>
       <h2 className="screen_header">{platformName}</h2>
       <table className="time_screen">
         <tbody>
@@ -16,7 +19,7 @@ const Timetable = ({ trains, platformName }) => {
           ))}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 export default Timetable;
