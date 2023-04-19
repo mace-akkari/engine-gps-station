@@ -4,7 +4,7 @@ body {
   background: url("gps.webp") no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
-  overflow: hidden;
+
 }
 
 .header{
@@ -27,9 +27,10 @@ body {
   font-weight: 500;
   padding: 0px 13px;
   background-color: blue;
-  border: 5px solid red
+  border: 5px solid red;
 
 }
+
 
 .search_bar{
   display: flex;
@@ -55,9 +56,14 @@ body {
 }
 
 .moniters {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 50px
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 50px;
+  align-content: center;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: flex-start;
+  gap: 2%;
 }
 
 .screen_header {
@@ -68,13 +74,21 @@ body {
   border: 2px solid white;
   font-size: 30px;
   background: rgb(82 79 78);
+  width: 400px
 }
+
+.line-northern {
+  background: #000;
+  color: #FFF;
+}
+
 .time_screen {
   border: 16px solid #333;
   color: yellow;
   background-color: #111;
   font-size: 25px;
   font-weight: 700;
+  width: 403px;
 }
 
 
