@@ -57,13 +57,15 @@ body {
 
 .moniters {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 50px;
-  align-content: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   justify-items: center;
-  align-items: flex-start;
-  gap: 2%;
+  margin-top: 50px;
+
+}
+
+.screen_container {
+  margin-bottom: 12px;
 }
 
 .screen_header {
@@ -79,6 +81,51 @@ body {
 
 .line-northern {
   background: #000;
+  color: #FFF;
+}
+
+.line-central {
+  background: #ff0000;
+  color: 000;
+}
+
+.line-bakerloo {
+  background:	#964b00;
+  color: #FFF;
+}
+
+.line-victoria {
+  background: #12b0e4;
+  color: #FFF;
+}
+
+.line- {
+  background: #000;
+  color: #FFF;
+}
+
+.line-piccadilly {
+  background: #000080;
+  color: #FFF;
+}
+
+.line- {
+  background: #000;
+  color: #FFF;
+}
+
+.line-jubilee {
+  background: #C0C0C0;
+  color: #FFF;
+}
+
+.line-circle {
+  background: #FFFF00;
+  color: #FFF;
+}
+
+.line-district {
+  background:	#008000;
   color: #FFF;
 }
 
